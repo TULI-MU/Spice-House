@@ -10,6 +10,9 @@ import NotFound from './NotFound/NotFound';
 import RequireAuth from './Authentication/RequireAuth/RequireAuth';
 import ItemDetail from './../src/inventory/ItemDetail/ItemDetail';
 import Footer from './pages/Footer/Footer';
+import FindSupplier from './FindSupplier/FindSupplier';
+import Manage from './Manage/Manage';
+import AddItems from './AddItems/AddItems';
 
 function App() {
   return (
@@ -18,12 +21,22 @@ function App() {
        <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path='/manage' element={<RequireAuth>
+          <Manage></Manage>
+        </RequireAuth>}>
+        </Route>
+        <Route path='/additems' element={<RequireAuth>
+          <AddItems></AddItems>
+        </RequireAuth>}>
+        </Route>
         <Route path="/item/:itemId" element={
       <RequireAuth>
           <ItemDetail></ItemDetail>
       </RequireAuth>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path='/findsupplier' element={<FindSupplier></FindSupplier>}></Route>
+
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

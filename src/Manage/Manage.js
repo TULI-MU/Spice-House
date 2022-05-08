@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UseItem from '../../../Hooks/UseItem';
+import UseItem from '../Hooks/UseItem';
+import Item from '../inventory/Item/Item';
 
-
-const ManageItems = () => {
-    const [items, setItems] = useState([])
+const Manage = () => {
+    const [items, setItems] = useState([]);
     const navigate=useNavigate();
     useEffect(() => {
-        fetch('https://calm-chamber-21871.herokuapp.com/item/')
+        fetch('')
             .then(res => res.json())
             .then(data => setItems(data));
     }, [])
@@ -31,14 +31,14 @@ const navigateToAddItem=()=>{
   navigate('/additems')
 }
     return (
-        <div id="items" className='container'>
+        <div id="services" className='container'>
             <div className="">
-                <h1 className='text-primary text-center mt-5'>manage items</h1>
+                <h1 className='text-secondary text-center mt-5'>Manage Items</h1>
                 <br />
                 <button onClick={navigateToAddItem}>Add New Item</button>
-                <div className="items-container">
+                <div className="Items-container">
                     {
-                       items.map(item => <div key={item._id} >
+                        items.map(item => <div key={item._id} >
                             <h1>{item.name}</h1>
 
                             <p>Supplier: {item.supplier}</p>
@@ -55,4 +55,4 @@ const navigateToAddItem=()=>{
     );
 };
 
-export default ManageItems;
+export default Manage;
