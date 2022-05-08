@@ -14,7 +14,6 @@ const Item = ({ item }) => {
     }
     return (
         <div className='item'>
-                       <button className='btn btn-link text-white text-decoration-none'>Manage Inventories</button>
             <img className='w-100' src={img} alt="" />
             <h2>{name}</h2>
 

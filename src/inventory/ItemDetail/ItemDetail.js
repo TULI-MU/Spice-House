@@ -51,7 +51,7 @@ const ItemDetail = () => {
             <h4>Supplier:{item.supplier}</h4>
             <h2> Quantity : {item.quantity}</h2>
             <p>Description:{item.description}</p>
-            <button className='btn btn-link text-white text-decoration-none'>Manage Inventories</button>
+            
             <br />
             <form onSubmit={handleUpdateQuantity} >
                 <input type="number" name="quantity" placeholder='Update quantity' id="" />

@@ -13,6 +13,7 @@ import Footer from './pages/Footer/Footer';
 import FindSupplier from './FindSupplier/FindSupplier';
 import Manage from './Manage/Manage';
 import AddItems from './AddItems/AddItems';
+import MyItems from './AddItems/MyItems/MyItems';
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
       <RequireAuth>
           <ItemDetail></ItemDetail>
       </RequireAuth>}></Route>
+      <Route path='/myitems' element={
+          <RequireAuth>
+          <MyItems></MyItems>
+          </RequireAuth>
+        }></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
         <Route path='/findsupplier' element={<FindSupplier></FindSupplier>}></Route>
