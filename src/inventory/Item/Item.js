@@ -1,25 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../Item/Item.css';
 
 
 const Item = ({ item }) => {
-    const { id:_id, name, price, quantity, description, img } = item;
+    const {_id, name, price,supplier, quantity, description, img } = item;
     // console.log(props.name);
     const navigate = useNavigate();
 
-    const navigateToInventoryDetail = _id => {
+    const navigateToItemDetail = id => {
 
-        navigate('/checkout');
+        navigate(`/item/${id}`);
     }
     return (
         <div className='item'>
+                       <button className='btn btn-link text-white text-decoration-none'>Manage Inventories</button>
             <img className='w-100' src={img} alt="" />
             <h2>{name}</h2>
-            <h4>Price: {price}</h4>
+
             <h4>Quantity:{quantity}</h4>
-            <p><small>{description}</small></p>
-            <button  onClick={() => navigateToInventoryDetail(_id)}className='stock-btn'>Stock</button>
-            <button className='btn'>{name}</button>
+            <p><small>Description:{description}</small></p>
+            <button  onClick={() => navigateToItemDetail(_id)}className='stock-btn'>Stock</button>
+            
         </div>
     );
 };

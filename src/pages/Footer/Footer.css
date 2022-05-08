@@ -1,0 +1,33 @@
+.footer {
+    background-color: darkseagreen;
+    height: 200px;
+    padding-left: 140px;
+    padding-right: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: aliceblue;
+}
+
+.food {
+    font-size: 30px;
+}
+
+.display {
+    display: block;
+    padding-right: 650px;
+}
+
+
+
+.left small {
+    font-size: 13px;
+
+
+}
+
+.footer p {
+    font-size: 20px;
+    font-weight: 500;
+
+}

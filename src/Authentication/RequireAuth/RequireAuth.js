@@ -2,14 +2,15 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
-import InventoryDetail from '../../inventory/InventoryDetail/InventoryDetail';
+import ItemDetail from '../../inventory/ItemDetail/ItemDetail';
+// import Loading from '../Loading/Loading';
 
 
 const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
     if (loading) {
-        return <InventoryDetail></InventoryDetail>
+        return <ItemDetail></ItemDetail>
     }
     if (!user) {
         return <Navigate to='/login' state={{ from: location }} replace />;
