@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "PAPRICA",
+        "price": "2000",
+        "quantity": "1kg",
+        "supplier-name":"Abdul",
+        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
+        "img": "paprica.jpg"
+    },
+    {
+        "_id": 2,
+        "name": "PIMENTO",
+        "price": "3500",
+        "quantity": "1kg",
+        "supplier-name":"Kalem",
+        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
+        "img": "pimento.jpg"
+    },
+    {
+        "_id": 3,
+        "name": "PINK PEPPER",
+        "price": "5000",
+        "quantity": "2kg",
+        "supplier-name":"Joy",
+        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
+        "img": "pink pepper.jpg"
+    },
+    {
+        "_id": 4,
+        "name": "CORIANDER",
+        "price": "5,000",
+        "quantity": "2kg",
+        "supplier-name":"Tarek",
+        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
+        "img": "spice4.jpg"
+    },
+    {
+        "_id": 5,
+        "name": "CARDAMOM",
+        "price": "3000",
+        "quantity": "1kg",
+        "supplier-name":"Rayhan",
+        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
+        "img": "spice2.jpg"
+    },
+    {
+        "_id": 6,
+        "name": "CLOVE",
+        "price": "2000",
+        "quantity": "2kg",
+        "supplier-name":"Notun",
+        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
+        "img": "spice3.jpg"
+    }
+]
