@@ -6,7 +6,7 @@ const Catalog = ({ catalog }) => {
     
     return (
         <div className='item'>
-            <img className='w-100' src={img} alt="" />
+            <img className='w-80' src={img} alt="" />
             <p><small>{description}</small></p>
             
         </div>

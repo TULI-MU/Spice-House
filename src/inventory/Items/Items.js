@@ -16,7 +16,7 @@ const Items = () => {
         <div id='items' className='container'>
             <div className="row">
                 <h1 className='text text-center mt-5'>COLLECTION</h1>
-                <div id='programs' className="programs-container">
+                <div id='items' className="items-container">
                     {
                         items.map(item => <Item
                             key={item._id}

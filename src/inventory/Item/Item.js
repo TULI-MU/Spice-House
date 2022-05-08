@@ -7,19 +7,19 @@ const Item = ({ item }) => {
     // console.log(props.name);
     const navigate = useNavigate();
 
-    const navigateToItemDetail = _id => {
+    const navigateToInventoryDetail = _id => {
 
         navigate('/checkout');
     }
     return (
-        <div className='program'>
+        <div className='item'>
             <img className='w-100' src={img} alt="" />
             <h2>{name}</h2>
             <h4>Price: {price}</h4>
             <h4>Quantity:{quantity}</h4>
             <p><small>{description}</small></p>
-            <button className='stock-btn'>Stock</button>
-            <button onClick={() => navigateToItemDetail(_id)} className='btn'>{name}</button>
+            <button  onClick={() => navigateToInventoryDetail(_id)}className='stock-btn'>Stock</button>
+            <button className='btn'>{name}</button>
         </div>
     );
 };

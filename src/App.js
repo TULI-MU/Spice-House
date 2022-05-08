@@ -7,6 +7,9 @@ import About from './About/About';
 import Login from './Authentication/Login/Login';
 import Register from './Authentication/Register/Register';
 import NotFound from './NotFound/NotFound';
+import InventoryDetail from './inventory/InventoryDetail/InventoryDetail';
+import CheckOut from './CheckOut/CheckOut';
+import RequireAuth from './Authentication/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -15,9 +18,14 @@ function App() {
        <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        {/* <Route path="/item" element={<} */}
+        <Route path="/item/:inventoryId" element={<InventoryDetail></InventoryDetail>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <CheckOut></CheckOut>
+          </RequireAuth>
+        }></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

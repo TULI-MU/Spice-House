@@ -18,7 +18,7 @@ const Catalogs = () => {
                 <div id='items' className="items-container">
                     {
                        catalogs.map(catalog=><Catalog
-                           key={catalog.id}
+                           key={catalog._id}
                            catalog={catalog}>
                        </Catalog>)
                     }
