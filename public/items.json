@@ -6,7 +6,7 @@
         "quantity": "1kg",
         "supplier":"Abdul",
         "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
-        "img": "paprica.jpg"
+        "img": "https://cdn.shopify.com/s/files/1/0282/3402/3009/files/restaurant-breakfast_255x180_crop_center.jpg?v=1587640282"
     },
     {
         
@@ -15,42 +15,7 @@
         "quantity": "1kg",
         "supplier":"Kalem",
         "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
-        "img": "pimento.jpg"
-    },
-    {
-    
-        "name": "PINK PEPPER",
-        "price": "5000",
-        "quantity": "2kg",
-        "supplier":"Joy",
-        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
-        "img": "pink pepper.jpg"
-    },
-    {
-       
-        "name": "CORIANDER",
-        "price": "5,000",
-        "quantity": "2kg",
-        "supplier":"Tarek",
-        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
-        "img": "spice4.jpg"
-    },
-    {
-      
-        "name": "CARDAMOM",
-        "price": "3000",
-        "quantity": "1kg",
-        "supplier":"Rayhan",
-        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
-        "img": "spice2.jpg"
-    },
-    {
-      
-        "name": "CLOVE",
-        "price": "2000",
-        "quantity": "2kg",
-        "supplier":"Notun",
-        "description": "We make fresh & healthy home made food for your hungry tummy..If you are looking for testy & healthy foods,this is the best place you are at.",
-        "img": "spice3.jpg"
+        "img": "https://cdn.shopify.com/s/files/1/0282/3402/3009/files/slide-1_255x180_crop_center.jpg?v=1587622959"
     }
+    
 ]

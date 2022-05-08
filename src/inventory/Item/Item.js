@@ -5,7 +5,8 @@ import '../Item/Item.css';
 
 const Item = ({ item }) => {
     const {_id, name, price,supplier, quantity, description, img } = item;
-    // console.log(props.name);
+
+    console.log(img);
     const navigate = useNavigate();
 
     const navigateToItemDetail = id => {
