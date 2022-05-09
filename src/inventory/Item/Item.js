@@ -1,28 +1,30 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../Item/Item.css';
 
+import React from 'react';
+import './Item.css'
+
+import { Card } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom'
 
 const Item = ({ item }) => {
-    const {_id, name, price,supplier, quantity, description, img } = item;
-
-    console.log(img);
-    const navigate = useNavigate();
-
-    const navigateToItemDetail = id => {
-
-        navigate(`/item/${id}`);
-    }
+    const navigate = useNavigate()
+    const { name, price, image, supplier, description, _id } = item
     return (
-        <div className='item'>
-            <img className='w-100' src={img} alt="" />
-            <h2>{name}</h2>
-
-            <h4>Quantity:{quantity}</h4>
-            <p><small>Description:{description}</small></p>
-            <button  onClick={() => navigateToItemDetail(_id)}className='stock-btn'>Stock</button>
-            
-        </div>
+        <Card className='hover:shadow-2xl' style={{ width: '18rem' }}>
+            <Card.Img className='card-img' variant="top" src={image} />
+            <Card.Body>
+                <div className='d-flex justify-between'>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Title>{supplier}</Card.Title>
+                </div>
+                <Card.Title> ${price}</Card.Title>
+                <Card.Text>
+                    {description.slice(0, 60)}
+                </Card.Text>
+            </Card.Body>
+            <Card.Body>
+                <button onClick={() => navigate(`/updateto/${_id}`)} className='btn btn-primary'>Update</button>
+            </Card.Body>
+        </Card>
     );
 };
 

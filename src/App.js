@@ -14,6 +14,9 @@ import FindSupplier from './FindSupplier/FindSupplier';
 import Manage from './Manage/Manage';
 import AddItems from './AddItems/AddItems';
 import MyItems from './AddItems/MyItems/MyItems';
+import ResetPassword from './ResetPassword/ResetPassword';
+import Update from './Update/Update';
+import Action from './Action/Action';
 
 function App() {
   return (
@@ -22,10 +25,12 @@ function App() {
        <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path='/updateto/:id' element={<RequireAuth>
+          <Update></Update>
+        </RequireAuth>}></Route>
         <Route path='/manage' element={<RequireAuth>
-          <Manage></Manage>
-        </RequireAuth>}>
-        </Route>
+          <Action></Action>
+        </RequireAuth>}></Route>
         <Route path='/additems' element={<RequireAuth>
           <AddItems></AddItems>
         </RequireAuth>}>
@@ -44,6 +49,7 @@ function App() {
         <Route path='/findsupplier' element={<FindSupplier></FindSupplier>}></Route>
 
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path='/resetPassword' element={<ResetPassword></ResetPassword>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
 

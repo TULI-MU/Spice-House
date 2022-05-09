@@ -1,9 +1,3 @@
-.btn {
-    background-color: #4CAF50;
-    color: aliceblue;
-
-}
-
-.btn:hover {
-    background-color: burlywood;
+.card-img {
+    height: 250px;
 }
