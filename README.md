@@ -1,16 +1,16 @@
-# Getting Started with Create React App
+# Spice House
 
 
-## Available Scripts
+## Short description:My website helps to know many types of spice.
 
 
 
-### 
+### Live-link:
 
 ### 
 ### 
 ###
-## Learn More
+## 
 
 ### Code Splitting
 
