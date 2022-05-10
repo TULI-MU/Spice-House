@@ -1,9 +1,9 @@
-
 import React from 'react';
 import './Item.css'
-
 import { Card } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
+
 
 const Item = ({ item }) => {
     const navigate = useNavigate()
@@ -22,10 +22,12 @@ const Item = ({ item }) => {
                 </Card.Text>
             </Card.Body>
             <Card.Body>
-                <button onClick={() => navigate(`/updateto/${_id}`)} className='btn btn-primary'>Update</button>
+                <button onClick={() => navigate(`/updateto/${_id}`)} className='btn btn-primary update-btn'>Update</button>
             </Card.Body>
         </Card>
     );
 };
 
 export default Item;
+
+

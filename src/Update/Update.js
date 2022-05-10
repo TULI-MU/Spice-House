@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const Update = () => {
-    const { id } = useParams()
+    const { id } = useParams();
     const [item, setItem] = useState({})
     const { name, supplier, quantity, description, price, _id, image } = item
     console.log(quantity);
@@ -15,9 +15,10 @@ const Update = () => {
 
     useEffect(() => {
         (async () => {
-            const url = `https://frozen-springs-79370.herokuapp.com/gadget/${id}`
+            const url = `http://localhost:5000/item/${id}`;
             try {
                 const { data } = await axios.get(url)
+                console.log(data);
                 setItem(data)
             }
             catch (error) {
@@ -35,7 +36,7 @@ const Update = () => {
             console.log(reQuantity, quantity);
 
             console.log(newQuantity);
-            const url = `https://frozen-springs-79370.herokuapp.com/restockGadget/${id}`
+            const url = `http://localhost:5000/restockItem/${id}`
             try {
                 const { data } = await axios.put(url, { newQuantity })
                 if (data.modifiedCount === 1 || data.matchedCount === 1) {
@@ -52,7 +53,7 @@ const Update = () => {
     const handleDeliver = () => {
         (async () => {
             const newUpdate = { quantity }
-            const url = `https://frozen-springs-79370.herokuapp.com/deliverUpdate/${_id}`
+            const url = `http://localhost:5000/deliverUpdate/${_id}`
             try {
                 const { data } = await axios.put(url, newUpdate)
                 if (data.modifiedCount) {

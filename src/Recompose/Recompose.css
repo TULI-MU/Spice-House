@@ -1,0 +1,27 @@
+.submit-btn{
+    padding: 10px 20px;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5px;
+
+}
+/* .message{
+        margin: auto;
+        background-color: aqua;
+} */
+.comment-box{
+    background-color:darkgrey;
+	position: relative;
+	padding: 15px;
+	color: white;
+}
+.comment-box::after {
+	content: "";
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	bottom: -25px;
+	left: 90%;
+	background-color: #003BDE;
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+}

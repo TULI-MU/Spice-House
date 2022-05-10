@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
@@ -5,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import UseItem from '../Hooks/UseItem';
 import ShowItems from '../../src/ShowItems/ShowItems';
 
-const inventory = () => {
+const Inventory = () => {
     // h00ks
     const [item] = UseItem()
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ const inventory = () => {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(`https://frozen-springs-79370.herokuapp.com/gadgetsByPaging?limit=${displayGadgets}&pageNumber=${onPage}`);
+            const { data } = await axios.get(`http://localhost:5000/itemsByPaging?limit=${displayItems}&pageNumber=${onPage}`);
 
             if (!data?.success) {
                 setItems([])
@@ -51,7 +52,7 @@ const inventory = () => {
                                 key={item._id}
                               item={item}
                             ></ShowItems>)
-                        }
+                            }
                     </ul>
                 </div>
 
@@ -80,4 +81,4 @@ const inventory = () => {
     );
 };
 
-export default inventory;
+export default Inventory;

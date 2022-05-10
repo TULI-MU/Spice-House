@@ -1,6 +1,6 @@
 import './Items.css'
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import UseItem from '../../Hooks/UseItem';
 import Item from '../Item/Item';
 
@@ -12,7 +12,7 @@ const Items = () => {
 
     return (
         <div>
-            <h1 className='text-center my-3 text-3xl text-black font-bold'>Our Best Selling Items</h1>
+            <h1 className='text-center my-3 text-3xl text-black font-bold'>COLLECTION</h1>
             <div className='item-container'>
 
                 <div className='allItems my-4'>
@@ -26,7 +26,7 @@ const Items = () => {
                 </div>
             </div>
 
-            <button onClick={() => navigate('/inventory')} className='btn btn-primary d-block my-3 mx-auto'>Manage Invent</button>
+            <button onClick={() => navigate('/inventory')} className='btn btn-primary invent-btn d-block my-3 mx-auto'>Manage Invent</button>
 
         </div>
     );

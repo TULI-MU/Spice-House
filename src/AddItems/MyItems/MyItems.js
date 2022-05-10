@@ -5,7 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import toast from 'react-hot-toast'
-import Item from '../../inventory/Item/Item';
+import Item from '../../Inventory/Item/Item';
 
 const MyItems = () => {
     const [loading, setLoading] = useState(false)
@@ -19,13 +19,9 @@ const MyItems = () => {
     useEffect(() => {
         (async () => {
             const email = user?.email;
-            const url = `https://frozen-springs-79370.herokuapp.com/myGadgets?email=${email}`;
+            const url = `http://localhost:5000/myItems?email=${email}`;
             try {
-                const { data } = await axios.get(url, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('your_Token')}`
-                    }
-                });
+                const { data } = await axios.get(url);
                 setMyItems(data);
             }
             catch (error) {
@@ -37,14 +33,18 @@ const MyItems = () => {
             }
         })()
 
-
+        // , {
+        //     headers: {
+        //         authorization: `Bearer ${localStorage.getItem('your_Token')}`
+        //     }
+        // }
     }, [user, navigate, loading])
 
     const deleteItem = (id) => {
-        const permission = window.confirm('Are want to delete?')
+        const permission = window.confirm('Are you want to delete?')
         if (permission) {
             (async () => {
-                const { data } = await axios.delete(`${id}`);
+                const { data } = await axios.delete(`http://localhost:5000/deleteItem/${id}`);
 
                 if (data.deletedCount === 1) {
                     toast.success('Deleted 1', { id: 'success' })

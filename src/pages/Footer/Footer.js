@@ -6,7 +6,7 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <footer className='mt-5 footer'>
+        <footer className='mt-5 footer bg-secondary'>
             <img src={logo} alt="" />
             <div className='display'>
                 <h2>Spice House</h2>

@@ -1,3 +1,17 @@
+
 .card-img {
-    height: 250px;
+    height: 200px;
 }
+
+.update-btn{
+    
+        color:white;
+        background-color:darkseagreen;
+        border:none;
+        padding: 8px 25px;
+        border-radius: 5px;
+    }
+    
+    .update-btn:hover {
+        background-color:coral;
+    }

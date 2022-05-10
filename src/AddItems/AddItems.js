@@ -17,7 +17,7 @@ const AddItems = () => {
             quantity: e.target.quantity.value,
             supplier: e.target.supplier.value
         };
-        const url = 'https://frozen-springs-79370.herokuapp.com/addGadget'
+        const url = 'http://localhost:5000/addItem'
         try {
             const { data } = await axios.post(url, item)
             if (!data.success) {

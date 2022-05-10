@@ -8,15 +8,15 @@ import Login from './Authentication/Login/Login';
 import Register from './Authentication/Register/Register';
 import NotFound from './NotFound/NotFound';
 import RequireAuth from './Authentication/RequireAuth/RequireAuth';
-import ItemDetail from './../src/inventory/ItemDetail/ItemDetail';
 import Footer from './pages/Footer/Footer';
 import FindSupplier from './FindSupplier/FindSupplier';
-import Manage from './Manage/Manage';
 import AddItems from './AddItems/AddItems';
 import MyItems from './AddItems/MyItems/MyItems';
 import ResetPassword from './ResetPassword/ResetPassword';
 import Update from './Update/Update';
 import Action from './Action/Action';
+import Inventory from '../src/Inventory/Inventory';
+
 
 function App() {
   return (
@@ -31,14 +31,13 @@ function App() {
         <Route path='/manage' element={<RequireAuth>
           <Action></Action>
         </RequireAuth>}></Route>
+        <Route path='/inventory' element={<RequireAuth>
+          <Inventory></Inventory>
+        </RequireAuth>}></Route>
         <Route path='/additems' element={<RequireAuth>
           <AddItems></AddItems>
         </RequireAuth>}>
         </Route>
-        <Route path="/item/:itemId" element={
-      <RequireAuth>
-          <ItemDetail></ItemDetail>
-      </RequireAuth>}></Route>
       <Route path='/myitems' element={
           <RequireAuth>
           <MyItems></MyItems>
