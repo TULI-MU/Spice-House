@@ -1,14 +1,12 @@
 # Spice House
 
-## Short description:My website helps to know many types of spice.
-
-
-
-### Live-link:
+### Live-link:()
 ## GITHUB [CLIENT]()
 ## GITHUB [SERVER]()
 # StackOverFlow:[Questions](https://stackoverflow.com/questions/72185583/where-to-find-username-and-password-in-mongodb)
 
+## Short description:My website helps to know many types of spice.
+### Spice House
 ### Homepage:There are 6 section
 ### Banner:Some special spice banners are included.
 ### Inventory:Through this section you can find out many types of spice.

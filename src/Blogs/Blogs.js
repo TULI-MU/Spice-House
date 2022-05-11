@@ -67,7 +67,17 @@ const Blogs = () => {
                             <li>NoSQL databases are not so good for complex queries because these are not as powerful as SQL queries.</li>
                         </div>
                     </div>
+                
                 </div>
+            </div>
+            <div className='q1-container question2'>
+                <h4>What is the purpose of jwt and how does it work</h4>
+                <p>
+                What Is JWT?
+                JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued.
+                How JWT Works?
+            JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.</p>
+
             </div>
         </div>
     );

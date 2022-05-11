@@ -4,6 +4,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 
+
+
+//resetpass
 const ResetPassword = () => {
 
     const [email, setEmail] = useState({ value: "", error: "" });
