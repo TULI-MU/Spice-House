@@ -1,0 +1,14 @@
+.add-btn{
+    color:white;
+    background-color:darkseagreen;
+    border:none;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+.view{
+    text-decoration: none;
+
+}
+.view:hover{
+    color: forestgreen;
+}

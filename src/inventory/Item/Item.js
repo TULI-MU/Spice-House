@@ -12,7 +12,7 @@ const Item = ({ item }) => {
         <Card className='hover:shadow-2xl' style={{ width: '18rem' }}>
             <Card.Img className='card-img' variant="top" src={image} />
             <Card.Body>
-                <div className='d-flex justify-between'>
+                <div className='card'>
                     <Card.Title>{name}</Card.Title>
                     <Card.Title>{supplier}</Card.Title>
                 </div>

@@ -6,8 +6,7 @@ const Blogs = () => {
             <div className='q1-container'>
                 <h3>Difference between js and node js</h3>
                 <div className='question1'>
-                    <div>
-                        <h5>JavaScript</h5>
+                    <div><h5>JavaScript</h5>
                         <li>Javascript is a  language that is used for writing scripts on the website.</li>
                         <li>Javascript can only be run in the browsers.</li>
                         <li>It is basically used on the client-side.	</li>

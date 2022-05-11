@@ -7,7 +7,7 @@ const UseItem= () => {
 
         (async () => {
             try {
-                const url = 'http://localhost:5000/item/'
+                const url = 'https://calm-chamber-21871.herokuapp.com/item/'
                 const { data } = await axios.get(url)
                 setItems(data)
             }

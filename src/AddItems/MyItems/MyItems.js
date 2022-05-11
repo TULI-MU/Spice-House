@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import toast from 'react-hot-toast'
 import Item from '../../Inventory/Item/Item';
+import '../MyItems/MyItems.css';
 
 const MyItems = () => {
     const [loading, setLoading] = useState(false)
@@ -19,32 +20,32 @@ const MyItems = () => {
     useEffect(() => {
         (async () => {
             const email = user?.email;
-            const url = `http://localhost:5000/myItems?email=${email}`;
+            const url = `https://calm-chamber-21871.herokuapp.com/myItems?email=${email}`;
             try {
-                const { data } = await axios.get(url);
+                const { data } = await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('your_Token')}`
+                    }
+                });
                 setMyItems(data);
             }
             catch (error) {
                 console.log(error.message);
                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth);
-                    navigate('/signIn')
+                    navigate('/signin')
                 }
             }
         })()
 
-        // , {
-        //     headers: {
-        //         authorization: `Bearer ${localStorage.getItem('your_Token')}`
-        //     }
-        // }
+      
     }, [user, navigate, loading])
 
     const deleteItem = (id) => {
         const permission = window.confirm('Are you want to delete?')
         if (permission) {
             (async () => {
-                const { data } = await axios.delete(`http://localhost:5000/deleteItem/${id}`);
+                const { data } = await axios.delete(`https://calm-chamber-21871.herokuapp.com/deleteItem/${id}`);
 
                 if (data.deletedCount === 1) {
                     toast.success('Deleted 1', { id: 'success' })
@@ -58,8 +59,8 @@ const MyItems = () => {
         <div className='mx-auto'>
             <h1 className='text-center text-3xl font-semibold m-2 text-cyan-500'>YOUR TOTAL ITEM IS {myItems.length}</h1>
 
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <div className="box">
+                <table className="">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
@@ -99,10 +100,10 @@ const MyItems = () => {
                                     {item.price}
                                 </td>
                                 <td className="px-6 py-4 text-right">
-                                    <Link to={`/updateto/${item._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Update</Link>
+                                    <Link to={`/updateto/${item._id}`} className="update-btn font-medium text-blue-600 dark:text-blue-500 hover:underline">Update</Link>
                                 </td>
                                 <td className="px-6 py-4 text-right">
-                                    <button onClick={() => deleteItem(item._id)} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
+                                    <button onClick={() => deleteItem(item._id)} className=" delete-btn font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
                                 </td>
                             </tr>)
                         }

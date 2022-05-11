@@ -8,6 +8,8 @@ import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTokenMake from '../../Hooks/useTikenMake';
+import '../Login/Login.css';
 
 
 
@@ -25,6 +27,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useTokenMake(user);
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
@@ -65,7 +68,7 @@ const Login = () => {
 
     return (
         <div className='container w-50 mx-auto'>
-            <h2 className='text-secondary text-center mt-2'>Please Login</h2>
+            <h2 className='text-secondary text-center mt-2'>Login</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
@@ -76,11 +79,12 @@ const Login = () => {
                 <Button variant="secondary w-50 mx-auto d-block mb-2" type="submit">
                     Login
                 </Button>
+                <Link to="/resetPassword" className='link'>ResetPassword</Link>
             </Form>
             {errorElement}
             <p>Don't have account? <Link to="/register" className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
             <p>Forget Password?</p>
-            <p><button className='btn btn-link bg-secondary text-white text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
+            
             <SocialLogin></SocialLogin>
             <ToastContainer />
         </div>

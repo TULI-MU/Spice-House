@@ -2,6 +2,10 @@
 .card-img {
     height: 200px;
 }
+.card{
+    display: flex;
+    justify-content: space-between;
+}
 
 .update-btn{
     

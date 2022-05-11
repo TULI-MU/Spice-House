@@ -3,6 +3,7 @@ import axios from 'axios';
 import React from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import '../ShowItems/ShowItems.css';
 
 const ShowItems = ({ item, setLoading, loading }) => {
     const navigate = useNavigate()
@@ -11,7 +12,7 @@ const ShowItems = ({ item, setLoading, loading }) => {
         const permission = window.confirm('Are want to delete?')
         if (permission) {
             (async () => {
-                const { data } = await axios.delete(`https://frozen-springs-79370.herokuapp.com/deleteGadget/${id}`);
+                const { data } = await axios.delete(`https://calm-chamber-21871.herokuapp.com/deleteItem/${id}`);
 
                 if (data.deletedCount === 1) {
                     toast.success('Deleted 1', { id: 'success' })
@@ -22,7 +23,7 @@ const ShowItems = ({ item, setLoading, loading }) => {
     }
     return (
         <li className="py-3 sm:py-4">
-            <div className="flex items-center space-x-4">
+            <div className="show-items">
                 <div className="flex-shrink-0">
                     <img className="w-8 h-8 rounded-full" src={image} alt="" />
                 </div>
@@ -35,10 +36,10 @@ const ShowItems = ({ item, setLoading, loading }) => {
                     </p>
 
                     <div className='d-flex'>
-                        <button onClick={() => { deleteItem(_id) }} className="bg-red-800 rounded p-1 text-white truncate">
+                        <button onClick={() => { deleteItem(_id) }} className="delete bg-red-800 rounded p-1 text-white truncate">
                             Delete
                         </button>
-                        <button onClick={() => navigate(`/updateto/${_id}`)} className="ms-3 bg-sky-800 rounded p-1 text-white truncate">
+                        <button onClick={() => navigate(`/updateto/${_id}`)} className=" show-item ms-3 bg-sky-800 rounded p-1 text-white truncate">
                             Update
                         </button>
                     </div>

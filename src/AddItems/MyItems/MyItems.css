@@ -1,3 +1,24 @@
 .my-item{
     min-height: 100vh;
 }
+.box{
+    border: 5px solid rgb(122, 3, 122);
+    display: block;
+}
+.delete-btn{
+    background-color: dimgrey;
+    border: none;
+    color:white;
+    padding: 8px 25px;
+    border-radius: 5px;
+
+}
+.delete-btn:hover{
+  background-color: rgb(150, 6, 6);
+
+
+}
+.update-btn{
+    background-color:rgb(30, 82, 30);
+    text-decoration: none;
+}

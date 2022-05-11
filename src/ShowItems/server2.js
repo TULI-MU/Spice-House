@@ -25,7 +25,7 @@ const AllProducts = () => {
         //IIFE
         // query parameter
         (async () => {
-            const { data } = await axios.get(`https://frozen-springs-79370.herokuapp.com/products?limit=${limit}&pageNumber=${pageNumber}`);
+            const { data } = await axios.get(`https://calm-chamber-21871.herokuapp.com/products?limit=${limit}&pageNumber=${pageNumber}`);
 
             if (!data?.success) {
                 setProducts([])
@@ -42,7 +42,7 @@ const AllProducts = () => {
 
     const handleDelete = (id) => {
         (async () => {
-            const { data } = await axios.delete(`https://frozen-springs-79370.herokuapp.com/products/${id}`);
+            const { data } = await axios.delete(`https://calm-chamber-21871.herokuapp.com/products/${id}`);
 
             if (!data.success) return toast.error(data.error)
 

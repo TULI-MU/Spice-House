@@ -15,7 +15,7 @@ const Update = () => {
 
     useEffect(() => {
         (async () => {
-            const url = `http://localhost:5000/item/${id}`;
+            const url = `https://calm-chamber-21871.herokuapp.com/item/${id}`;
             try {
                 const { data } = await axios.get(url)
                 console.log(data);
@@ -36,7 +36,7 @@ const Update = () => {
             console.log(reQuantity, quantity);
 
             console.log(newQuantity);
-            const url = `http://localhost:5000/restockItem/${id}`
+            const url = `https://calm-chamber-21871.herokuapp.com/restockItem/${id}`
             try {
                 const { data } = await axios.put(url, { newQuantity })
                 if (data.modifiedCount === 1 || data.matchedCount === 1) {
@@ -53,7 +53,7 @@ const Update = () => {
     const handleDeliver = () => {
         (async () => {
             const newUpdate = { quantity }
-            const url = `http://localhost:5000/deliverUpdate/${_id}`
+            const url = `https://calm-chamber-21871.herokuapp.com/deliverUpdate/${_id}`
             try {
                 const { data } = await axios.put(url, newUpdate)
                 if (data.modifiedCount) {

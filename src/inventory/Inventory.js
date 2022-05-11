@@ -1,10 +1,10 @@
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import UseItem from '../Hooks/UseItem';
 import ShowItems from '../../src/ShowItems/ShowItems';
+import '../Inventory/Inventory.css';
 
 const Inventory = () => {
     // h00ks
@@ -19,7 +19,7 @@ const Inventory = () => {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(`http://localhost:5000/itemsByPaging?limit=${displayItems}&pageNumber=${onPage}`);
+            const { data } = await axios.get(`https://calm-chamber-21871.herokuapp.com/itemByPaging?limit=${displayItems}&pageNumber=${onPage}`);
 
             if (!data?.success) {
                 setItems([])
@@ -36,10 +36,10 @@ const Inventory = () => {
 
     return (
         <div className=' my-10'>
-            <div className="p-4 sm:w-33 mx-auto max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                <div className="flex justify-between items-center mb-4">
-                    <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Collection</h5>
-                    <Link to='/' className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+            <div className="">
+                <div className="">
+                    <h5 className="">Latest Collection</h5>
+                    <Link to='/' className="view">
                         View all
                     </Link>
                 </div>
@@ -57,7 +57,7 @@ const Inventory = () => {
                 </div>
 
             </div>
-            <button onClick={() => navigate('/addItems')} className="mx-auto d-block my-3 bg-green-800 rounded p-1 text-white truncate">
+            <button onClick={() => navigate('/addItems')} className=" add-btn mx-auto d-block my-3 bg-green-800 rounded p-1 text-white truncate">
                 Add More
             </button>
             <div className="flex m-2 justify-center">
@@ -65,7 +65,7 @@ const Inventory = () => {
                 (
                     <div
                         onClick={() => setOnPage(number)}
-                        className={`rounded-lg m-2 cursor-pointer border border-red-700 p-2 ${onPage === number ? "bg-green-800 text-white" : ""
+                        className={`${onPage === number ? "" : ""
                             }`}
                     >
                         {number + 1}
