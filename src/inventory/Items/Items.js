@@ -9,7 +9,6 @@ const Items = () => {
     const [items] = UseItem();
     const sixItems = items.slice(0, 6)
 
-
     return (
         <div>
             <h1 className='text-center my-3 text-3xl text-black font-bold'>COLLECTION</h1>

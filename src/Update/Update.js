@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 const Update = () => {
     const { id } = useParams();
     const [item, setItem] = useState({})
-    const { name, supplier, quantity, description, price, _id, image } = item
+    const { name, supplier, quantity, description, price, _id, image } = item;
     console.log(quantity);
     console.log(name);
 

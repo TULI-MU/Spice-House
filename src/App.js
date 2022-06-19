@@ -15,13 +15,13 @@ import ResetPassword from './ResetPassword/ResetPassword';
 import Update from './Update/Update';
 import Action from './Action/Action';
 import Inventory from '../src/Inventory/Inventory';
-import { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
   return (
     <div className="App">
-      <Toaster></Toaster>
+      
        <Header></Header>
        <Routes>
         <Route path="/" element={<Home></Home>}></Route>
